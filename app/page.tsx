@@ -110,7 +110,7 @@ export default function HomePage() {
                 setSearchQuery('');
                 setSelectedGender('All');
                 setSelectedCategory('All');
-                setMaxPrice(500);
+                setMaxPrice(1000);
               }}
               className="text-xs text-blue-600 hover:underline font-medium"
             >
@@ -179,7 +179,7 @@ export default function HomePage() {
             <input
               type="range"
               min="10"
-              max="500"
+              max="1000"
               step="10"
               value={maxPrice}
               onChange={(e) => setMaxPrice(Number(e.target.value))}
