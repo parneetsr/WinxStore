@@ -26,7 +26,7 @@ export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedGender, setSelectedGender] = useState('All');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [maxPrice, setMaxPrice] = useState<number>(500);
+  const [maxPrice, setMaxPrice] = useState<number>(1000);
 
   useEffect(() => {
     async function fetchProducts() {
