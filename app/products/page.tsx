@@ -40,42 +40,49 @@ export default function ProductsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
+    <div className="min-h-screen bg-black p-6 text-white">
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Winx Store Catalog</h1>
-          <Link href="/" className="text-blue-600 font-medium hover:underline">
+          <h1 className="text-3xl font-bold text-white">Winx Store Catalog</h1>
+          <Link href="/" className="text-blue-400 font-medium hover:underline">
             &larr; Back to Home
           </Link>
         </div>
 
         {loading ? (
-          <p className="text-center text-gray-500 py-12">Loading products...</p>
+          <p className="text-center text-gray-400 py-12">Loading products...</p>
         ) : error ? (
-          <div className="bg-red-50 border border-red-200 text-red-600 p-4 rounded-lg">
+          <div className="bg-red-900 border border-red-700 text-red-200 p-4 rounded-lg">
             {error}
           </div>
         ) : products.length === 0 ? (
-          <p className="text-center text-gray-500 py-12">No products found in the database yet.</p>
+          <p className="text-center text-gray-400 py-12">No products found in the database yet.</p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {products.map((product) => (
-              <div key={product._id} className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm flex flex-col">
+              <div
+                key={product._id}
+                className="bg-neutral-800 border border-neutral-700 rounded-xl overflow-hidden shadow-sm flex flex-col text-white"
+              >
                 <img
                   src={product.imageUrl}
                   alt={product.name}
-                  className="w-full h-48 object-cover bg-gray-100"
+                  className="w-full h-48 object-cover bg-neutral-900"
                 />
                 <div className="p-4 flex-1 flex flex-col justify-between">
                   <div>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-blue-300 bg-blue-900 px-2 py-1 rounded">
                       {product.category}
                     </span>
-                    <h2 className="font-bold text-lg text-gray-900 mt-2">{product.name}</h2>
-                    <p className="text-gray-600 text-sm mt-1 line-clamp-2">{product.description}</p>
+                    <h2 className="font-bold text-lg text-white mt-2">{product.name}</h2>
+                    <p className="text-gray-300 text-sm mt-1 line-clamp-2">
+                      {product.description}
+                    </p>
                   </div>
                   <div className="mt-4 flex items-center justify-between">
-                    <span className="text-xl font-bold text-gray-900">${product.price.toFixed(2)}</span>
+                    <span className="text-xl font-bold text-white">
+                      ${product.price.toFixed(2)}
+                    </span>
                     <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">
                       Add to Cart
                     </button>
