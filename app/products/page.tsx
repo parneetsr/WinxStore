@@ -43,7 +43,7 @@ export default function ProductsPage() {
     <div className="min-h-screen bg-black p-6 text-white">
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-white">Winx Store Catalog</h1>
+          <h1 className="text-3xl font-bold text-white">Winx Store Catalog - Updated</h1>
           <Link href="/" className="text-blue-400 font-medium hover:underline">
             &larr; Back to Home
           </Link>

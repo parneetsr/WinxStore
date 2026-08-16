@@ -26,7 +26,7 @@ export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedGender, setSelectedGender] = useState('All');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [maxPrice, setMaxPrice] = useState<number>(500);
+  const [maxPrice, setMaxPrice] = useState<number>(1000);
 
   useEffect(() => {
     async function fetchProducts() {
@@ -110,7 +110,7 @@ export default function HomePage() {
                 setSearchQuery('');
                 setSelectedGender('All');
                 setSelectedCategory('All');
-                setMaxPrice(500);
+                setMaxPrice(1000);
               }}
               className="text-xs text-blue-600 hover:underline font-medium"
             >
@@ -179,7 +179,7 @@ export default function HomePage() {
             <input
               type="range"
               min="10"
-              max="500"
+              max="1000"
               step="10"
               value={maxPrice}
               onChange={(e) => setMaxPrice(Number(e.target.value))}
@@ -205,11 +205,11 @@ export default function HomePage() {
                   setSearchQuery('');
                   setSelectedGender('All');
                   setSelectedCategory('All');
-                  setMaxPrice(500);
+                  setMaxPrice(1000);
                 }}
                 className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition text-sm"
               >
-                Reset Filters
+                Clear all Filters
               </button>
             </div>
           ) : (
